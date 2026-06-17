@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Petite Nook</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div id="header_place"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header_place').innerHTML = data);
+    </script>
+
+    <div id="nav_place"></div>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('nav_place').innerHTML = data);
+    </script>
+
+    <!--動態廣告-->
+    <div class="slideshow_container">
+        <div class="mySlide">
+            <a href="bed2.html"><img src="image/bed/bed2.jpg" style="width: 100%"></a>
+        </div>
+
+        <div class="mySlide">
+            <a href="clock.html"><img src="image/electronic/clock.jpg" style="width: 100%"></a>
+        </div>
+
+        <div class="mySlide">
+            <a href="Bathroom_shelf.html"><img src="image/shower/Bathroom_shelf.jpg" style="width: 100%"></a>
+        </div>
+
+        <!--左右按鈕-->
+        <a class="prev" onclick="plusSlide(-1)"><</a>
+        <a class="next" onclick="plusSlide(1)">></a>
+    </div>
+
+    <!--顯示圓點-->
+    <div style="text-align: center;">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+
+    <script>
+        //1.用按鈕播放照片 2.加入圓點 3.自動播放
+        var slideIndex = 0;
+        var timer = null;
+        //showSlide(slideIndex);
+        autoPlay(true);
+
+        function plusSlide(n){
+            showSlide(slideIndex+=n);
+        }
+
+        function currentSlide(n){
+            showSlide(slideIndex=n);
+        }
+
+        function showSlide(n){
+            clearTimeout(timer);
+            var slide = document.getElementsByClassName("mySlide");
+            var dots = document.getElementsByClassName("dot");
+            if (n >= slide.length){
+                slideIndex = 0;
+            }
+            if (n < 0){
+                slideIndex = slide.length - 1;
+            }
+
+            for (var i=0; i<slide.length; i++){
+                slide[i].style.display = "none";
+            }
+
+            slide[slideIndex].style.display = "block";
+
+            //控制圓點播放
+            for (var i=0; i<dots.length; i++){
+                dots[i].className = dots[i].className.replace(" active","");
+            }
+
+            dots[slideIndex].className += " active";
+        }
+
+        //自動播放
+        function autoPlay(isFirst){
+            var slide = document.getElementsByClassName("mySlide");
+            if(isFirst){
+                slideIndex = 0;
+            }else{
+                slideIndex++;
+            }
+
+            if(slideIndex > slide.length){
+                slideIndex = 0;
+            }
+            showSlide(slideIndex);
+            timer = setTimeout(autoPlay, 2000);
+        }
+    </script>
+
+    <article>
+        <section id="bed">
+            <h2>舒眠寢具</h2>
+            <div class="product_container">
+                <div class="product_item">
+                    <a href="bed1.html" class="product_txt">
+                        <img src="image/bed/bed1.jpg">
+                        <p>極簡水洗棉素色床包組(暖霧灰)</p>
+                    </a>
+                    <p class="price">$980</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="bed2.html" class="product_txt">
+                        <img src="image/bed/bed2.jpg">
+                        <p>極簡水洗棉素色床包組(靜謐藍)</p>
+                    </a>
+                    <p class="price">$1280</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="pillow.html" class="product_txt">
+                        <img src="image/bed/pillow.jpg">
+                        <p>蓬鬆水洗棉柔軟枕頭(單件)</p>
+                    </a>
+                    <p class="price">$300</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="storage">
+            <h2>居家收納</h2>
+            <div class="product_container">
+                <div class="product_item">
+                    <a href="cloth_hanger.html" class="product_txt">
+                        <img src="image/storage/cloth_hanger.jpg">
+                        <p>經典原木質感衣架(10入)</p>
+                    </a>
+                    <p class="price">$390</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="cloth_rack.html" class="product_txt">
+                        <img src="image/storage/cloth_rack.jpg">
+                        <p>落地式多功能衣帽架</p>
+                    </a>
+                    <p class="price">$800</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="storage_basket.html" class="product_txt">
+                        <img src="image/storage/storage_basket.jpg">
+                        <p>黑色金屬收納籃</p>
+                    </a>
+                    <p class="price">$290</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="shower">
+            <h2>沐浴時光</h2>
+            <div class="product_container">
+                <div class="product_item">
+                    <a href="Bathroom_shelf.html" class="product_txt">
+                        <img src="image/shower/Bathroom_shelf.jpg">
+                        <p>工業風木質浴室置物架（附毛巾桿）</p>
+                    </a>
+                    <p class="price">$450</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="laundry_basket.html" class="product_txt">
+                        <img src="image/shower/laundry_basket.jpg">
+                        <p>藤編附蓋洗衣籃</p>
+                    </a>
+                    <p class="price">$600</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="slippers.html" class="product_txt">
+                        <img src="image/shower/slippers.jpg">
+                        <p>簡約風浴室防滑拖鞋</p>
+                    </a>
+                    <p class="price">$250</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="toothbrush_holder.html" class="product_txt">
+                        <img src="image/shower/toothbrush_holder.jpg">
+                        <p>鯨魚造型陶瓷牙刷座</p>
+                    </a>
+                    <p class="price">$150</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cook">
+            <h2>餐廚日常</h2>
+            <div class="product_container">
+                <div class="product_item">
+                    <a href="cup.html" class="product_txt">
+                        <img src="image/cook/cup.jpg">
+                        <p>手作愛心陶瓷馬克杯</p>
+                    </a>
+                    <p class="price">$290</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="plate.html" class="product_txt">
+                        <img src="image/cook/plate.jpg">
+                        <p>兔子造型陶瓷點心盤</p>
+                    </a>
+                    <p class="price">$250</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="rag.html" class="product_txt">
+                        <img src="image/cook/rag.jpg">
+                        <p>極簡純棉吸水餐桌布</p>
+                    </a>
+                    <p class="price">$120</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="tableware.html" class="product_txt">
+                        <img src="image/cook/tableware.jpg">
+                        <p>歐式簡約不鏽鋼餐具套組</p>
+                    </a>
+                    <p class="price">$350</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="elec">
+            <h2>智能家居</h2>
+            <div class="product_container">
+                <div class="product_item">
+                    <a href="clock.html" class="product_txt">
+                        <img src="image/electronic/clock.jpg">
+                        <p>多功能電子靜音時鐘</p>
+                    </a>
+                    <p class="price">$350</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="lamp.html" class="product_txt">
+                        <img src="image/electronic/lamp.jpg">
+                        <p>北歐風實木底座檯燈</p>
+                    </a>
+                    <p class="price">$690</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="night_light.html" class="product_txt">
+                        <img src="image/electronic/night_light.jpg">
+                        <p>耳機小鴨矽膠小夜燈</p>
+                    </a>
+                    <p class="price">$290</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="desk">
+            <h2>書桌空間</h2>
+            <div class="product_container">
+                <div class="product_item">
+                    <a href="mirrow.html" class="product_txt">
+                        <img src="image/desk/mirrow.jpg">
+                        <p>復古桌面化妝鏡</p>
+                    </a>
+                    <p class="price">$350</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="seat_pad.html" class="product_txt">
+                        <img src="image/desk/seat_pad.jpg">
+                        <p>手工厚實舒適座椅墊</p>
+                    </a>
+                    <p class="price">$250</p>
+                </div>
+
+                <div class="product_item">
+                    <a href="tissue_box.html"  class="product_txt">
+                        <img src="image/desk/tissue_box.jpg">
+                        <p>時尚幾何印花面紙盒</p>
+                    </a>
+                    <p class="price">$180</p>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <div id="footer_place"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer_place').innerHTML = data);
+    </script>
+</body>
+</html>

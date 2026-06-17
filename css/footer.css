@@ -1,0 +1,34 @@
+footer{
+    background-color: #5E6572;
+    color: #EEF1EF;
+}
+
+/*網頁底部文字*/
+.footer_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.footer_item{
+    text-align: left;
+    padding: 20px 60px;
+}
+
+.footer_txt{
+    text-decoration: none; 
+    color: #EEF1EF;
+}
+
+/*滑鼠偵測文字時出現底線*/
+.footer_txt:hover{
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+/*版權聲明*/
+.footer_copyright{
+    text-align: center;
+    padding: 20px;
+}

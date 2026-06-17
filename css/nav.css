@@ -1,0 +1,60 @@
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    background-color: #5E6572;
+    margin: 0px;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a{
+    display: inline-block;
+    color: #EEF1EF;
+    text-decoration: none;
+    padding: 20px 80px;
+}
+
+nav a:hover{
+    background-color: #A9B4C2;
+    color: #1C2321;
+}
+
+/*下拉式選單*/
+.dropdown{
+    display: inline-block;
+    position: relative;
+}
+
+/*子選單*/
+.submenu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #A9B4C2;
+    z-index: 1000;
+
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease; 
+}
+
+/*滑鼠偵測時顯示子選單*/
+.dropdown:hover .submenu{
+    max-height: 500px;
+    opacity: 1;
+}
+
+/*滑鼠移入子選單時，上層按鈕保持顏色*/
+.dropdown:hover > a{
+    background-color: #A9B4C2;
+    color: #1C2321;
+}

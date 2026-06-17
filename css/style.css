@@ -1,0 +1,324 @@
+/*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}*/
+
+body{
+    background-color: #EEF1EF;
+    margin: 0px;
+}
+
+.page-space{
+    height:170px;
+}
+
+
+
+/*商品區*/
+
+article{
+    display: flex;
+    gap:50px;
+    padding:40px;
+    flex-wrap: wrap;
+}
+
+.left{
+    flex:1;
+}
+
+.right{
+    flex:1;
+}
+
+/* 大圖 */
+
+.item-img{
+    width:70%;
+    display:block;
+
+    margin:auto;
+
+    border-radius:20px;
+}
+
+/* 摺疊區 */
+
+.box{
+    margin-top:30px;
+}
+
+.title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 0;
+
+    cursor:pointer;
+
+    border-bottom:1px solid #ccc;
+}
+
+.title h3{
+    color: #1C2321 ;
+}
+
+
+.arrow{
+    transition:0.3s;
+}
+
+
+.content{
+    display:none;
+    padding:15px 0;
+}
+
+
+
+/*評價*/
+
+.rating{
+    display:inline-flex;
+    flex-direction:row-reverse;
+    margin:20px 0;
+}
+
+.rating input{
+    display:none;
+}
+
+
+.rating label{
+    font-size:40px;
+    color:#ccc;
+    cursor:pointer;
+    transition:color 0.2s;
+}
+
+
+/* 滑過 */
+.rating label:hover,
+.rating label:hover ~ label{
+    color:#8f8f8f;
+}
+
+
+/* 選取後 */
+.rating input:checked ~ label{
+    color:gold;
+}
+
+
+/* 評論輸入 */
+textarea{
+    width:100%;
+    height:80px;
+    padding:10px;
+    margin-top:15px;
+
+}
+
+
+/* 評價顯示 */
+.review{
+    background:white;
+    padding:15px;
+    margin-top:20px;
+    border-radius:10px;
+
+}
+
+.review-star{
+    color:gold;
+    font-size:20px;
+}
+
+
+/* 會員 + 日期 同排 */
+.review-info{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    margin-top:15px;
+}
+
+.review-name{
+    font-weight:bold;
+    font-size:16px;
+}
+
+.review-date{
+    color:#5E6572;
+    font-size:14px;
+}
+
+.review p{
+    margin-top:10px;
+}
+
+/* 商品資訊 */
+
+.right h2{
+    color: #1C2321;
+}
+.price{
+    font-size:30px;
+    margin-top:20px;
+    color: #1C2321;
+}
+
+/* 數量鍵 */
+.quantity{
+
+    display:flex;
+    align-items:center;
+    margin-top:30px;
+    gap:15px;
+}
+
+
+.quantity button{
+
+    width:35px;
+    height:35px;
+    cursor:pointer;
+    font-size:20px;
+}
+
+
+#num{
+    font-size:20px;
+    color: #1C2321;
+}
+
+
+.btn-group{
+    margin-top:50px;
+}
+
+.btn-group button{
+    padding:12px 20px;
+    margin-right:10px;
+    cursor:pointer;
+    background-color: #A9B4C2;
+    border-radius: 15px;
+    border:none;
+    color: #EEF1EF;
+}
+
+
+/*推薦商品*/
+
+.recommend{
+    flex-basis:100%;
+}
+
+.recommend h3{
+    text-align:center;
+    margin-bottom:15px;
+    color: #1C2321 ;
+}
+
+.rec-container{
+    width:450px;
+    height:410px;
+    position:relative;
+    margin:auto;
+}
+
+.rec-slide{
+    display:none;
+    text-align:center;
+}
+
+.rec-slide img{
+    width:50%;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.rec-show{
+    display:block;
+}
+
+.rec-prev,
+.rec-next{
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    margin-top:-30px;
+    padding:16px;
+    font-weight:bold;
+    font-size:18px;
+    border-radius:3px;
+    transition:0.6s ease;
+}
+
+.rec-next{
+    right:0;
+}
+
+.rec-prev:hover,
+.rec-next:hover{
+    background-color:rgba(0,0,0,0.8);
+    color:white;
+}
+
+.rec-text{
+    margin-top:10px;
+    font-size:16px;
+    color: #1C2321 ;
+    text-decoration: none;
+}
+
+.rec-dot-box{
+    text-align:center;
+    margin-top:10px;
+}
+
+.rec-dot{
+    cursor:pointer;
+    height:15px;
+    width:15px;
+    margin:0 2px;
+    background-color:#bbb;
+    border-radius:50%;
+    display:inline-block;
+    transition:0.6s ease;
+}
+
+.rec-active,
+.rec-dot:hover{
+    background-color:#717171;
+}
+
+.rec-fade{
+    animation-name:recFade;
+    animation-duration:1s;
+}
+
+@keyframes recFade{
+    from{
+        opacity:.4;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+
+
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:50px;  
+    height:50px;
+
+    cursor:pointer;
+    display:none;
+}

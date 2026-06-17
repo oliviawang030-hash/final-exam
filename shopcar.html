@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/shopcar.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div id="header_place"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header_place').innerHTML = data);
+    </script>
+
+    <div id="nav_place"></div>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('nav_place').innerHTML = data);
+    </script>
+
+    <div class="shopcar-space"></div>
+    
+    <article>
+        <section class="car">
+            <h2><span class="current-step">購物車</span>
+                <span class="line"></span>
+                <span class="next-step">結帳</span>
+            </h2>
+            <div class="car-box">
+
+                <!-- 標題 -->
+                <div class="car-title">
+                    <p>商品</p>
+                    <p>價格</p>
+                    <p>數量</p>
+                    <p>小計</p>
+                </div>
+
+                
+                <div id="cartList"></div>
+
+                <!-- 總金額 -->         
+                <div class="total">
+                    <p>總金額</p>
+
+                    <div class="checkout">
+                        <p>NT$<span id="total">1190</span></p>
+                        
+                        <a href="checkout.html"><button onclick="checkout()">前往結帳</button></a>
+                            
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="js/shopcar.js"></script>
+    </article>
+    
+
+    <div id="footer_place"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer_place').innerHTML = data);
+    </script>
+
+
+    <a href="#" id="topBtn">
+        <img src="image/icon/arrow.png">
+    </a> 
+</body>
+</html>

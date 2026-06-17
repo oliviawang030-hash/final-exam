@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Petite Nook-其他服務</title>
+    <link rel="stylesheet" href="css/other_services.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div id="header_place"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header_place').innerHTML = data);
+    </script>
+
+    <div id="nav_place"></div>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('nav_place').innerHTML = data);
+    </script>
+
+    <article>
+        <div class="services_container">
+            <section id="shopping_process">
+                <h1>購物流程<hr></h1>
+                <div class="shopping_progress_item">
+                    <img src="image/shopping_process.png">
+                </div>
+            </section>
+            
+            <section id="delivery">
+                <h1>配送方式<hr></h1>
+                <p>歡迎來到Le Petite Nook！為了讓您訂購的商品能完好無損送達，我們提供了以下完整的配送管道與服務說明。</p>
+                <p style="color: #7D98A1; font-size: 20px; font-weight: bold;">配送管道與運費計算</p>
+                <table border="1" style="text-align: center; width: 50%;">
+                    <tr style="background-color: #5E6572; color: #EEF1EF;">
+                        <td>配送方式</td>
+                        <td>運費</td>
+                        <td>運送天數</td>
+                    </tr>
+                    <tr>
+                        <td>一般宅配</td>
+                        <td>免運費</td>
+                        <td>2-4個工作天</td>
+                    </tr>
+                    <tr>
+                        <td>現場自取</td>
+                        <td>免運費</td>
+                        <td>當天即可取貨</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="question">
+                <h1>常見問題<hr></h1>
+                <p>親愛的顧客您好，這裡收集了大家最常遇到的商品選購與訂單問題。如果下方找不到您的解答，歡迎點擊頁尾資訊與我們聯繫。</p>
+                <div class="question_container">
+                    <div class="question_item">
+                        <input type="checkbox" id="q1" class="question_toggle"><!--checkbox-->
+                        <label for="q1" class="question_title">
+                            Q1：請問實木商品該如何保養？
+                            <span class="plus"></span><!--"+"符號-->
+                        </label>
+
+                        <div class="question_txt"><!--答案框-->
+                            <p>日常清潔只需要使用微濕的軟布順著木紋擦拭，再用乾布擦乾即可。</p>
+                        </div>
+                    </div>
+
+                    <div class="question_item">
+                        <input type="checkbox" id="q2" class="question_toggle"><!--checkbox-->
+                        <label for="q2" class="question_title">
+                            Q2：下單後大約可以多久收到貨？
+                            <span class="plus"></span><!--"+"符號-->
+                        </label>
+
+                        <div class="question_txt"><!--答案框-->
+                            <p>下單後會在2-4個工作天內由專人致電與您預約方便的配送時間。若是手工製作商品，則需要8-10個工作天的製作期，製作完成後會第一時間安排配送。</p>
+                        </div>
+                    </div>
+
+                    <div class="question_item">
+                        <input type="checkbox" id="q3" class="question_toggle"><!--checkbox-->
+                        <label for="q3" class="question_title">
+                            Q3：我可以在 Le Petite Nook 網頁上申請退換貨嗎？
+                            <span class="plus"></span><!--"+"符號-->
+                        </label>
+
+                        <div class="question_txt"><!--答案框-->
+                            <p>Le Petite Nook 目前不提供線上退換貨申請，需連繫客服安排到府取貨。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <div id="footer_place"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer_place').innerHTML = data);
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 180px;
+    background-color: #EEF1EF;
+    margin: 0px;
+    color: #1C2321;
+}
+
+h1{
+    color: #5E6572;
+}
+
+section{
+    padding-top: 70px;
+}
+
+.about_container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand_container, .spririt_container{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.brand_container img{
+    height: 200px;
+    width: auto;
+}
+
+.brand_container p{
+    flex: 1;
+    line-height: 2.5;
+    font-size: 20px;
+}
+
+.spririt_container p{
+    flex: 1;
+    line-height: 2.5;
+    font-size: 20px;
+}
+
+.member_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+    justify-items: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.member_item{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    height: 420px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+/*組員卡片*/
+.member_card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/*照片和心得重疊*/
+.pic, .back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+/*卡片反面：心得*/
+.back{
+    opacity: 0;
+    background-color: #A9B4C2;
+    color: #EEF1EF;
+    padding: 10px;
+}
+
+.member_item:hover .pic{
+    opacity: 0;
+}
+
+.member_item:hover .back{
+    opacity: 1;
+}

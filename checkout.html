@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div id="header_place"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header_place').innerHTML = data);
+    </script>
+
+    <div id="nav_place"></div>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('nav_place').innerHTML = data);
+    </script>
+
+    <div class="checkout-space"></div> 
+
+    <article>
+        <section class="checkout">
+            <h2><span class="next-step">購物車</span>
+                <span class="line"></span>
+                <span class="current-step">結帳</span>
+            </h2>
+            <div class="check-box"></div>
+
+
+            <form action="" method="post">
+                <label>
+                    <span>姓&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+                    <input id="name" type="text" name="username" size="40">
+                </label>
+                <label>
+                    <span>地&nbsp;&nbsp;&nbsp;&nbsp;址：</span>
+                    <input id="address" type="text" name="username" size="40">
+                </label>
+                <label>
+                    <span></span>電&nbsp;&nbsp;&nbsp;&nbsp;話：</span>
+                    <input  id="phone" type="text" name="username" size="40">
+                </label>
+                <label>
+                    <span>付款方式：</span>
+                    <select  id="payment" size=“1” name=“payment”>
+                        <option value="請選擇">請選擇</option>
+                        <option value="線上付款">線上付款</option>
+                        <option value="貨到付款">貨到付款</option>
+                    </select>
+                </label>
+
+
+            </form>
+
+
+
+            <div class="btn">
+                <button class="car" onclick="carClick()">完成結帳</button>
+            </div>
+
+        </section>
+    </article>
+
+    <div id="footer_place"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer_place').innerHTML = data);
+    </script>
+
+
+    <a href="#" id="topBtn">
+        <img src="image/icon/arrow.png">
+    </a> 
+
+    <script src="js/checkout.js"></script>
+</body>
+</html>

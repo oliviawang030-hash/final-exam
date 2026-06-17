@@ -1,0 +1,211 @@
+/*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}*/
+
+body{
+    background-color: #EEF1EF;
+    margin: 0px;
+}
+
+.shopcar-space{
+    height:200px;
+}
+
+.car{
+    width:80%;
+    margin:auto;
+    margin-bottom:100px;
+}
+
+.car h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+
+.current-step{
+    color:#1C2321;
+}
+
+
+.next-step{
+    color:#aaa;
+}
+
+
+.line{
+    display:inline-block;
+    width:50px;
+    height:4px;
+    background:#aaa;
+    border-radius:20px; 
+    vertical-align:middle;
+    margin:0 12px;
+}
+
+.car-box{
+    border:1px solid #222;
+}
+
+
+
+/* 標題 */
+
+.car-title,
+.car-item{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    align-items:center;
+    padding:20px;
+}
+
+
+
+.car-title{
+    background:#5e6572;
+    color:white;
+    font-size:20px;
+    padding:20px;
+
+}
+
+.car-title p:first-child{
+    padding-left:20px;
+}
+
+.car-title p:not(:first-child){
+    text-align:center;
+}
+
+
+
+.price{
+    text-align:center;
+}
+
+.number{
+    justify-content:center;
+}
+
+.subtotal{
+    text-align:center;
+}
+
+
+
+
+
+
+/* 商品 */
+.car-item{
+    border-bottom:1px solid #ccc;
+    position:relative;
+}
+
+
+.product{
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+}
+
+
+.product img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 數量鍵 */
+
+.number{
+    display:flex;
+    align-items:center;
+}
+
+
+.number button{
+    width:30px;
+    height:25px;
+    cursor:pointer;
+}
+
+.number span{
+    margin:0 10px;
+}
+
+.delete{
+    position:absolute;
+    right:15px;
+    top:10px;
+    border:none;
+    background:none;
+    font-size:20px;
+    cursor:pointer;
+
+}
+
+/* 總金額 */
+.total{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    align-items:center;
+    padding:30px 20px;
+}
+
+.total > p{
+    grid-column:1;
+}
+
+.checkout{
+    grid-column:4;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:30px;
+}
+.checkout p{
+    margin-right:20px;
+}
+
+.total button{
+    background:#A9B4C2;
+    border:none;
+    padding:15px 20px;
+    border-radius:15px;
+    cursor:pointer;
+    color: white;
+
+}
+
+
+
+
+
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:9999;
+    
+}
+
+#topBtn img{
+    width:50px;
+    height:50px;
+
+}

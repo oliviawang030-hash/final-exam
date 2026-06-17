@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 200px;
+    background-color: #EEF1EF;
+    margin: 0px;
+    color: #1C2321;
+}
+
+h1{
+    color: #5E6572;
+}
+
+h3{
+    color: #EEF1EF;
+}
+
+section{
+    padding-top: 70px;
+}
+
+.services_container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.shopping_progress_item{
+    text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+    border: #7D98A1;
+}
+
+th{
+    border: #7D98A1;
+}
+
+td{
+    padding: 10px;
+}
+
+.question_item{
+    border: 2px solid #7D98A1;
+    border-radius: 7px;
+    margin: 20px;
+}
+
+/* 隱藏checkbox*/
+.question_toggle{
+    display: none;
+}
+
+/*常見問題框*/
+.question_title{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+    background-color: #7D98A1;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #EEF1EF;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*隱藏答案框*/
+.question_txt{
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+    background-color: #EEF1EF;
+    padding: 0 20px;
+}
+
+/* 點擊checkbox後展開內容*/
+.question_toggle:checked + .question_title + .question_txt{
+    max-height: 200px;
+    padding: 20px;
+}
+
+/*最右方的+符號*/
+.plus::after{
+    content: "+";
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    align-items: center;
+}
+
+/*+變成-*/
+.question_toggle:checked + .question_title .plus::after{
+    content: "-";
+}
