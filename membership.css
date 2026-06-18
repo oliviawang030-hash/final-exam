@@ -1,0 +1,160 @@
+/* 抵銷固定導覽列高度，解決錨點跳轉跑版問題 */
+html {
+    scroll-padding-top: 180px; 
+    scroll-behavior: smooth; /* 加入平滑滾動效果，視覺更滑順 */
+}
+* {
+ 
+    box-sizing: border-box;
+}
+/* 確保所有元素計算高度時包含 padding */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;            
+    padding: 0;            
+    background-color: #EBF2F6;
+    color: #333333;
+    /* 確保 body 不會被內容撐開導致奇怪的滾動條 */
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* 會員專區容器：使用絕對定位或固定間距來避開上方 Header (100px) + Nav (通常約 50-60px) */
+.membership-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* 根據您的 Header + Nav 的實際總高度調整，若總高約 160px，請設定 170px */
+    padding-top: 170px; 
+    padding-bottom: 50px;
+}
+
+.main-container {
+    width: 90%;             
+    max-width: 450px;        
+    margin: 0 auto;         
+    padding: 20px;
+    background-color: #E6F0F5;
+    border: 1px solid #A9B4C2;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(94, 101, 114, 0.08);
+}
+
+/*登入 / 註冊頁籤*/
+.tab-box {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #A9B4C2;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.tab-button {
+    flex: 1;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    color: #5E6572;
+    transition: all 0.2s;
+}
+.active-tab {
+    background-color: #5E6572;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* 表單與輸入欄位控制*/
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #5E6572;
+}
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #A9B4C2;
+    font-size: 14px;
+    border-radius: 4px;
+    outline: none;
+}
+.form-group input:focus {
+    border-color: #7D98A1;
+}
+
+/*按鈕樣式*/
+.action-button {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #7D98A1;
+    color: #ffffff;
+    border: 1px solid #7D98A1;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.action-button:hover {
+    background-color: #5E6572;
+    border-color: #5E6572;
+}
+
+/* 登出帳號專用紅色按鈕樣式 */
+.logout-btn {
+    background-color: #D96B6B;
+    border-color: #D96B6B;
+    margin-top: 20px;
+}
+.logout-btn:hover {
+    background-color: #B84A4A;
+    border-color: #B84A4A;
+} 
+
+/*會員中心內部選單與資料盒*/
+.member-menu {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #5E6572;
+}
+.member-menu span {
+    cursor: pointer;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+.active-menu {
+    border-bottom: 2px solid #7D98A1 !important;
+    color: #7D98A1;
+    font-weight: bold;
+}
+
+/* 資料顯示盒底座 */
+.info-display-box {
+    border: 1px solid #A9B4C2;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+/* 資料與評論的每行文字條目 */
+.info-item {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333333;
+    text-align: left;
+}
+.info-item strong {
+    color: #5E6572;
+}
