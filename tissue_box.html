@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <div id="header_place"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header_place').innerHTML = data);
+    </script>
+
+    <div id="nav_place"></div>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('nav_place').innerHTML = data);
+    </script>
+
+    <div class="page-space"></div> 
+
+    <article>
+        <!--商品區-->
+        <section class="left">
+            <img src="image/desk/tissue_box.jpg"class="item-img" id="productImg">
+        </section>
+
+
+        <!-- 右側 -->
+        <section class="right">
+            <h2 id="productName">時尚幾何印花面紙盒</h2>
+
+            <p class="price" id="productPrice">
+                NT$180
+            </p>
+
+            <!-- 數量鍵 -->
+            <div class="quantity">
+
+                <button onclick="minus()">-</button>
+            
+                <span id="num">1</span>
+            
+                <button onclick="plus()">+</button>
+            
+            </div>
+            
+            
+            <div class="btn-group">
+
+                <a href="checkout.html"><button class="checkout" onclick="buyClick()">立即購買</button></a>
+    
+                <button class="cart" onclick="cartClick()">加入購物車</button>
+    
+            </div>
+
+            <!-- 商品介紹 -->
+            <div class="box">
+                <div class="title" onclick="toggleReview(this)">
+                    <h3>商品介紹</h3>
+                    <span class="arrow">></span>
+                </div>
+
+                <div class="content">
+                    <p>以俐落幾何圖樣搭配現代設計風格，打造兼具收納與美觀的生活用品。</p> 
+                    <p>可方便放置面紙，保持桌面整潔，同時為空間增添時尚感。</p> 
+                    <p>簡約大方的外觀適合客廳、臥室或辦公桌使用，讓日常用品也能成為居家佈置的一部分。</p>
+                   
+                </div>
+            </div>
+            
+            <!-- 評價 -->
+
+            <div class="box">
+                <div class="title" onclick="toggleReview(this)">
+
+                    <h3>評價</h3>
+                    <span class="arrow">></span>
+                </div>
+
+                <div class="content">
+
+                    <!-- 星等 -->
+                    <div class="rating">
+
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">★</label>
+
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">★</label>
+
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">★</label>
+
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">★</label>
+
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5">★</label>
+
+                    </div>
+
+                    <!-- 評論 -->
+                    <textarea id="comment" placeholder="請輸入評論"></textarea>
+                    
+                    
+                    <button onclick="addReview()">
+                        發表評論
+                    </button>
+
+                    <!-- 顯示評論 -->
+                    <div id="reviewList"></div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 推薦商品 -->
+        <section class="recommend">
+
+            <h3>推薦商品</h3>
+            <div class="rec-container">
+                <div class="rec-slide rec-fade">
+                    <a href="mirrow.html" class="rec-text">
+                        <img src="image/desk/mirrow.jpg">
+                        <div>復古桌面化妝鏡</div>
+                    </a>
+                </div>
+        
+                <div class="rec-slide rec-fade">
+                    <a href="seat_pad.html" class="rec-text">
+                        <img src="image/desk/seat_pad.jpg">
+                        <div>手工厚實舒適座椅墊</div>
+                    </a>
+                </div>
+        
+                <div class="rec-slide rec-fade">
+                    <a href="lamp.html" class="rec-text">
+                        <img src="image/electronic/lamp.jpg">
+                        <div>北歐風實木底座檯燈</div>
+                    </a>
+                </div>
+        
+                <div class="rec-slide rec-fade">
+                    <a href="clock.html" class="rec-text">
+                        <img src="image/electronic/clock.jpg">
+                        <div>多功能電子靜音時鐘</div>
+                    </a>
+                </div>
+        
+                <a class="rec-prev" onclick="changeRecSlide(-1)">&#10094;</a>
+                <a class="rec-next" onclick="changeRecSlide(1)">&#10095;</a>
+        
+            </div>
+        
+            <div class="rec-dot-box">
+                <span class="rec-dot" onclick="showRecSlides(1)"></span>
+                <span class="rec-dot" onclick="showRecSlides(2)"></span>
+                <span class="rec-dot" onclick="showRecSlides(3)"></span>
+                <span class="rec-dot" onclick="showRecSlides(4)"></span>
+        
+            </div>
+        
+        </section>
+    </article>
+
+   
+    <div id="footer_place"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer_place').innerHTML = data);
+    </script>
+
+
+    <div>
+        <img src="image/icon/arrow.png" id="topBtn">
+    </div> 
+
+    <script src="js/script.js"></script>
+</body>
+</html>
